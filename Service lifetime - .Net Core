@@ -5,6 +5,17 @@ There are 3 types of lifetimes supported by ASP.NET Core for the dependency inje
 2. Scoped Service
 3. Singleton Service
 
+1. Transient Service
+Every time the caller asks for the type, the dependency injection container will create a new instance of the type and it will return it from the dependency injection container.
+
+2. Scoped Service
+Meaning once for an HTTP request. Even if you ask the dependency injection container five times to give the instance of the type, the same object created will be returned every single time across the lifetime of this HTTP request.
+
+3. Singleton Service
+A Singleton instance will be created only once for the entire life cycle of the application. And every subsequent request for the object from the dependency injection container will give the same instance.
+
+It does not matter how many time we call the dependency injection container to get the object in the entire life cycle of the application, it will return the same object.
+
 ![Alt text](https://github.com/asmaamohamed22/.NET-Learning-Notes/blob/main/lifetime.png)
 
 ## References
